@@ -91,3 +91,13 @@ _그램 로컬 세션, 2026-05-16 — 사용자 프로필 `wh850`, 비관리자 
   "전원 절약을 위해 끌 수 있음" 체크 해제 필요(GUI).
 - Windows 업데이트 보류분 점검 미실시.
 - 유선(이더넷) 연결 가능 여부 미확인 — 가능하면 유선이 지연/안정성 면에서 최선.
+
+### 한/영 키 (RDP) — 부분 해결
+- 증상: Mac → RDP로 그램 제어 시 한/영 키가 안 먹음(로컬은 정상). 원인은
+  Mac용 Microsoft 원격 데스크톱이 `VK_HANGUL`을 전달 못 함.
+- 그램 조치: **AutoHotkey v2 설치**, `hangul-toggle.ahk` 작성 후 시작 프로그램 등록.
+  `Caps Lock` 및 `Shift+Space` → 한/영(`vk15`)으로 매핑.
+- `Shift+Space`는 RDP에서 정상 작동 확인됨.
+- `Caps Lock`은 미작동: 사용자 Mac의 Karabiner가 Caps Lock→F18→(macOS 입력소스
+  전환)으로 처리해 Windows 세션에 키가 전달되지 않음. 해결하려면 Mac Karabiner에
+  앱별 규칙(RDP 포커스 시 Caps Lock→Shift+Space) 추가 필요 — Mac 세션 작업.
