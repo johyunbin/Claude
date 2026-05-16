@@ -16,6 +16,7 @@ hyunbin의 3대 머신(맥미니·맥북·그램) 간 작업을 조율하는 git
 
 - `context/` — 모든 머신이 공유하는 사실 (머신·네트워크·인프라 스냅샷)
 - `tasks/`   — 머신별 작업 지침 (`gram.md`, `macbook.md`, …)
+- `dotclaude/` — 공유 `~/.claude` 설정 스냅샷 (그램 등 rsync 불가 머신용 git 채널, 비밀번호 가림)
 
 ## 저장소
 
