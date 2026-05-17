@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Markdown → PDF 변환 — Woori 목장 나눔 자료용.
+"""Markdown → PDF 변환 — woori 목장 나눔 자료용.
 
 Trading/src/md2pdf.py 의 Chrome CDP 렌더링 기법을 가져와 목장 나눔 문서에 맞춤.
 마크다운 → HTML → Chrome 헤드리스(CDP) → PDF.

@@ -1,4 +1,4 @@
-# Woori — 설교 녹취 · 교정 · 목장 나눔 자료
+# woori — 설교 녹취 · 교정 · 목장 나눔 자료
 
 우리들교회 주일 설교를 **녹취 → 교정 → 목장 나눔 자료(PDF)** 로 만드는 작업 공간.
 매주 같은 포맷으로 반복한다. `~/Claude` 종합 repo 안의 한 작업 영역.
@@ -10,7 +10,7 @@
 - 유튜브 라이브를 `yt-dlp`로 캡처하고 ffmpeg로 오디오만 추출 → `.m4a`.
 - 다시보기가 안 남는 라이브는 방송 진행 중에 캡처해야 한다.
 - 녹화 스크립트 `record_live.sh` — 안의 `URL` 값을 해당 설교 라이브로 바꾼 뒤
-  `caffeinate -i bash "Woori/record_live.sh"` 로 백그라운드 실행. 종료는 `pkill -INT -f <video-id>`.
+  `caffeinate -i bash "woori/record_live.sh"` 로 백그라운드 실행. 종료는 `pkill -INT -f <video-id>`.
 - 포맷 확인은 `yt-dlp -F <URL>`. 오디오 전용 트랙이 없으면 가장 낮은 화질의
   AAC-LC 묶음 포맷(예: 93번 360p)을 받아 `ffmpeg -vn -c:a copy`로 오디오만 추출한다.
 - 완성된 `.m4a`를 다글로(daglo.ai)에 올려 STT transcript를 받는다. 다글로 길이 제한은 4시간.
@@ -29,7 +29,7 @@
 **작업 순서 — 반드시 지킨다:**
 1. `목장 나눔.md` 작성 (아래 「자료 구성」 템플릿 따름)
 2. **심층 리뷰** — 오탈자, 성경 사실·인용의 정확성, 내용 완결성, 논리 흐름을 여러 각도로 점검·수정
-3. PDF 변환: `python3 Woori/md2pdf.py "<설교 폴더>/목장 나눔.md"`
+3. PDF 변환: `python3 woori/md2pdf.py "<설교 폴더>/목장 나눔.md"`
 4. **전체 페이지 점검** — 생성된 PDF의 모든 페이지를 이미지로 직접 확인한다. 빈 페이지, 잘못된 페이지 나눔, 상단 정렬 불일치, 내용이 어중간하게 잘리는 곳을 점검
 5. 문제가 있으면 수정 후 3~4단계 반복
 6. 완성본을 iCloud Drive 루트에 복사(`목장 나눔 - <제목>.pdf`)해 사용자에게 전달
@@ -71,7 +71,7 @@
 ## 폴더 구조
 
 ```
-Woori/
+woori/
   CLAUDE.md             이 파일 — 작업 지침
   record_live.sh        라이브 녹화 스크립트
   md2pdf.py             마크다운 → PDF 변환기 (Chrome CDP)
