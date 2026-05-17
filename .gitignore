@@ -1,3 +1,8 @@
 .DS_Store
 .claude/
 .gstack/
+
+# Woori — 용량 큰 생성물 (git 제외, 배포는 iCloud)
+*.m4a
+*.aac
+*.pdf
